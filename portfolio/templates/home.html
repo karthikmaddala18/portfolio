@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="flex-grow flex flex-col justify-center animate-on-load">
+    <section class="text-center max-w-4xl mx-auto relative px-4">
+        
+        <div class="absolute top-0 left-10 w-32 h-32 bg-brand-500/20 rounded-full blur-3xl animate-blob-spin -z-10">
+        </div>
+        <div
+            class="absolute bottom-10 right-10 w-40 h-40 bg-blue-500/20 rounded-full blur-3xl animate-blob-spin delay-200 -z-10">
+        </div>
+
+        <div
+            class="inline-block py-1 px-3 rounded-full bg-brand-50 border border-brand-200 text-brand-600 text-sm font-semibold tracking-wide mb-6">
+            B.Tech CSE (AI & ML)
+        </div>
+
+        <h1 class="text-5xl md:text-7xl font-display font-bold text-dark-900 leading-tight mb-6 tracking-tight">
+            Hi, I'm <br />
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-blue-600">Karthikeya
+                Maddala</span>
+        </h1>
+
+        <p class="text-lg md:text-xl text-dark-700 mb-10 max-w-2xl mx-auto leading-relaxed">
+            I'm a passionate developer specializing in Machine Learning, Python, and crafting robust digital solutions.
+            Currently pursuing my degree at Lovely Professional University.
+        </p>
+
+        <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+            <a href="{% url 'project_list' %}"
+                class="w-full sm:w-auto bg-dark-900 text-white px-8 py-4 rounded-full font-medium shadow-lg hover:shadow-xl hover:shadow-brand-500/20 hover:-translate-y-1 transition-all duration-300">
+                View My Projects
+            </a>
+            <a href="{% url 'contact' %}"
+                class="w-full sm:w-auto bg-white border border-slate-200 text-dark-800 px-8 py-4 rounded-full font-medium hover:border-brand-500 hover:text-brand-600 hover:bg-brand-50 transition-all duration-300">
+                Get in Touch
+            </a>
+        </div>
+    </section>
+
+    <div class="mt-24 max-w-5xl mx-auto w-full animate-on-load delay-200">
+        <p class="text-sm font-bold text-center text-slate-400 uppercase tracking-widest mb-8">Technical Arsenal</p>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 px-4">
+            <div
+                class="glass flex items-center justify-center p-4 rounded-xl shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 group cursor-default border border-slate-200/50">
+                <span class="font-medium text-dark-700 group-hover:text-brand-600 transition-colors">Python</span>
+            </div>
+            <div
+                class="glass flex items-center justify-center p-4 rounded-xl shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 group cursor-default border border-slate-200/50">
+                <span class="font-medium text-dark-700 group-hover:text-brand-600 transition-colors">Machine
+                    Learning</span>
+            </div>
+            <div
+                class="glass flex items-center justify-center p-4 rounded-xl shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 group cursor-default border border-slate-200/50">
+                <span class="font-medium text-dark-700 group-hover:text-brand-600 transition-colors">Java & C++</span>
+            </div>
+            <div
+                class="glass flex items-center justify-center p-4 rounded-xl shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 group cursor-default border border-slate-200/50">
+                <span class="font-medium text-dark-700 group-hover:text-brand-600 transition-colors">Pandas &
+                    NumPy</span>
+            </div>
+            <div
+                class="glass flex items-center justify-center p-4 rounded-xl shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 group cursor-default border border-slate-200/50">
+                <span class="font-medium text-dark-700 group-hover:text-brand-600 transition-colors">JavaScript & Node.js</span>
+            </div>
+            <div
+                class="glass flex items-center justify-center p-4 rounded-xl shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 group cursor-default border border-slate-200/50">
+                <span class="font-medium text-dark-700 group-hover:text-brand-600 transition-colors">HTML & CSS</span>
+            </div>
+            <div
+                class="glass flex items-center justify-center p-4 rounded-xl shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 group cursor-default border border-slate-200/50">
+                <span class="font-medium text-dark-700 group-hover:text-brand-600 transition-colors">MySQL & MongoDB</span>
+            </div>
+            <div
+                class="glass flex items-center justify-center p-4 rounded-xl shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 group cursor-default border border-slate-200/50">
+                <span class="font-medium text-dark-700 group-hover:text-brand-600 transition-colors">Git & VS Code</span>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="w-full animate-on-load">
+    <div class="text-center mb-16">
+        <h1 class="text-4xl md:text-5xl font-display font-bold text-dark-900 tracking-tight mb-4">Featured <span
+                class="text-brand-600">Projects</span></h1>
+        <p class="text-dark-700 max-w-2xl mx-auto">A selection of my best work in scalable backends, user-friendly
+            interfaces, and full-stack solutions.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {% for project in projects %}
+        
+        <div
+            class="group relative glass flex flex-col h-full rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl hover:shadow-brand-500/10 transition-all duration-500 hover:-translate-y-2 border border-slate-200">
+            
+            <div class="h-48 w-full bg-dark-900 relative overflow-hidden group-hover:bg-dark-800 transition-colors"
+                style="{% if project.image_url %}background-image: url('{% static project.image_url %}'); background-size: cover; background-position: center;{% endif %}">
+                <div
+                    class="absolute inset-0 bg-gradient-to-br from-brand-500/50 to-blue-600/50 group-hover:opacity-75 transition-opacity">
+                </div>
+                
+                <svg class="absolute inset-0 w-full h-full text-white/5" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <pattern id="grid-{{ project.pk }}" width="40" height="40" patternUnits="userSpaceOnUse">
+                            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" stroke-width="1" />
+                        </pattern>
+                    </defs>
+                    <rect width="100%" height="100%" fill="url(#grid-{{ project.pk }})" />
+                </svg>
+
+                <div class="absolute bottom-4 left-6 flex gap-2 flex-wrap">
+                    
+                    <span
+                        class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-xs font-semibold text-white uppercase tracking-wider border border-white/20">
+                        {{ project.tech_stack|truncatechars:15 }}
+                    </span>
+                </div>
+            </div>
+
+            <div class="p-6 md:p-8 flex-grow flex flex-col justify-between bg-white relative">
+                <div>
+                    <h2
+                        class="text-2xl font-bold font-display text-dark-900 mb-3 group-hover:text-brand-600 transition-colors">
+                        {{ project.title }}</h2>
+                    <p class="text-slate-600 mb-6 line-clamp-3 text-sm leading-relaxed">{{ project.description }}</p>
+                </div>
+
+                <a href="{% url 'project_detail' project.slug %}"
+                    class="inline-flex items-center gap-2 font-bold text-dark-900 group-hover:text-brand-600 transition-colors text-sm uppercase tracking-wider">
+                    View Case Study
+                    <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                </a>
+            </div>
+
+            <div
+                class="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-brand-500 to-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500">
+            </div>
+        </div>
+        {% empty %}
+        <div class="col-span-full text-center py-20 glass rounded-3xl border border-slate-200">
+            <div
+                class="w-20 h-20 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4 text-slate-400">
+                <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4">
+                    </path>
+                </svg>
+            </div>
+            <h3 class="text-xl font-bold text-dark-900 mb-2">Projects Coming Soon!</h3>
+            <p class="text-slate-500">I'm currently putting the finishing touches on my portfolio pieces. Check back
+                soon for updates.</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
