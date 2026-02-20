@@ -42,6 +42,10 @@ jobs:
       env:
         SECRET_KEY: 'test-secret-key'
         DEBUG: 'True'
+        DATABASE_NAME: portfolio_db
+        DATABASE_USER: postgres
+        DATABASE_PASSWORD: '1013'
+        DATABASE_HOST: localhost
         # EMAIL_HOST_USER: 'test@example.com' # Mock out email settings for tests
       run: |
         cd portfolio
